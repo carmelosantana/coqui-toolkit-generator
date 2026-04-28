@@ -1,0 +1,68 @@
+{
+    "name": "carmelosantana/coqui-toolkit-generator",
+    "description": "Standalone toolkit generator for scaffolding and extending installable Coqui toolkits.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "coqui",
+        "toolkit",
+        "generator",
+        "scaffold",
+        "php-agents"
+    ],
+    "authors": [
+        {
+            "name": "Carmelo Santana"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "carmelosantana/php-agents": "^0.13",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitGenerator\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "php-agents": {
+            "toolkits": [
+                "CarmeloSantana\\CoquiToolkitGenerator\\ToolkitGeneratorToolkit"
+            ],
+            "description": "Scaffold new Coqui toolkit packages and add tools to them from within a running Coqui session."
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../Core/php-agents",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "carmelosantana/php-agents": "0.13.x-dev"
+                }
+            }
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
