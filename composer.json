@@ -45,18 +45,6 @@
         "test": "pest",
         "analyse": "phpstan analyse --memory-limit=1G"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../Core/php-agents",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "carmelosantana/php-agents": "0.13.x-dev"
-                }
-            }
-        }
-    ],
     "config": {
         "sort-packages": true,
         "allow-plugins": {
